@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLRLC–LLMs Workshop @ NeurIPS 2026</title>
+  <title>The Human Context of AI: Whose Perspective Counts? | NeurIPS 2026 Social</title>
+  <meta name="description" content="An interactive NeurIPS 2026 Social in Sydney exploring how human perspectives, cultures, languages, and lived experiences shape the way we understand and build AI." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -23,16 +22,9 @@
       background: #ffffff;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
 
     /* Navbar */
     nav {
@@ -44,88 +36,154 @@
       border-bottom: 1px solid #e2e8f0;
     }
 
+    nav .container { width: 96%; max-width: 1600px; }
+
     .nav-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 0;
+      padding: 16px 0;
+      gap: 24px;
     }
 
-    .logo {
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #0f172a;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; color: #ffffff; }
 
-    .nav-links {
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
       display: flex;
-      gap: 22px;
-      font-weight: 500;
-      color: #0f172a;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+      flex-shrink: 0;
     }
+
+    .brand-text strong { display: block; font-size: 1.05rem; font-weight: 800; line-height: 1.2; }
+    .brand-text span { display: block; font-size: 0.8rem; color: #cbd5e1; line-height: 1.3; }
+
+    .nav-links { display: flex; gap: 28px; font-weight: 500; color: #0f172a; margin-left: auto; margin-right: 12px; }
+    .nav-links a:hover { color: #4338ca; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #4338ca;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { background: #3730a3; }
 
     /* Hero */
     .hero {
       position: relative;
       background:
-        linear-gradient(rgba(2, 6, 23, 0.45), rgba(49, 46, 129, 0.45)),
+        linear-gradient(100deg, rgba(2, 6, 23, 0.75) 0%, rgba(49, 46, 129, 0.55) 100%),
         url('download.jpeg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      padding: 140px 0;
-      text-align: center;
+      color: #ffffff;
+      padding: 110px 0 90px;
+      min-height: calc(100vh - 78px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+
+    .hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(250, 204, 21, 0.15);
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      color: #facc15;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.1rem;
       font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 30px;
+      line-height: 1.12;
+      letter-spacing: -1px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .highlight {
+      color: #facc15;
     }
 
     .hero p {
-      max-width: 850px;
-      margin: auto;
-      font-size: 1.2rem;
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.08rem;
       color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    .hero .subtitle {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #facc15;
+      letter-spacing: 0.5px;
+      margin-top: 32px;
     }
 
     .hero-buttons {
-      margin-top: 40px;
+      margin-top: 38px;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 15px 28px;
-      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 12px;
       font-weight: 600;
-      transition: 0.3s ease;
+      font-size: 0.98rem;
+      transition: 0.2s ease;
     }
 
-    .btn-primary {
-      background: white;
-      color: #0f172a;
+    .btn-primary { background: #ffffff; color: #0f172a; }
+    .btn-primary:hover { background: #eef2ff; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(148, 163, 184, 0.4); color: #ffffff; }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.12); }
+
+    .hero-meta {
+      margin-top: 56px;
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      color: #bae6fd;
+      font-size: 1rem;
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-    }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 10px; }
 
     /* Sections */
-    section {
-      padding: 100px 0;
-    }
+    section { padding: 100px 0; }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+    .section-header { text-align: center; margin-bottom: 60px; }
 
     .section-header span {
       color: #4338ca;
@@ -135,21 +193,77 @@
       font-weight: 700;
     }
 
-    .section-header h2 {
-      margin-top: 12px;
-      font-size: 1.9rem;
+    .section-header h2 { margin-top: 12px; font-size: 1.9rem; font-weight: 800; color: #0f172a; }
+
+    .section-header p { max-width: 750px; margin: 20px auto 0; color: #64748b; font-size: 1.1rem; }
+
+    .lead { font-size: 1.08rem; color: #334155; max-width: 900px; margin: 0 auto 20px; }
+
+    /* Quick facts */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .fact {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .fact .label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: #4338ca;
+    }
+
+    .fact .value { margin-top: 6px; font-weight: 700; color: #0f172a; font-size: 1.05rem; }
+
+    /* Activities */
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .activity {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: 0.3s ease;
+    }
+
+    .activity:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+    .activity .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #eef2ff;
+      color: #4338ca;
       font-weight: 800;
-      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
     }
 
-    .section-header p {
-      max-width: 750px;
-      margin: 20px auto 0;
-      color: #64748b;
-      font-size: 1.1rem;
-    }
+    .activity h3 { font-size: 1.15rem; color: #0f172a; margin-bottom: 4px; }
+    .activity .tag { font-size: 0.9rem; color: #4338ca; font-weight: 600; margin-bottom: 14px; }
+    .activity p { color: #475569; }
 
-    /* About */
+    .activity ul { margin-top: 14px; padding-left: 20px; color: #475569; }
+    .activity li { margin-bottom: 8px; }
+
+    /* About cards */
     .about-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -164,84 +278,20 @@
       padding: 40px;
     }
 
-    .about-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 25px;
-      color: #0f172a;
-    }
+    .about-card h3 { font-size: 1.05rem; margin-bottom: 20px; color: #0f172a; }
 
-    .goals li {
-      margin-bottom: 18px;
-      color: #475569;
-      line-height: 1.8;
-    }
+    .goals { padding-left: 20px; }
+    .goals li { margin-bottom: 14px; color: #475569; line-height: 1.8; }
 
-    /* ── Person Cards ── */
-    .people-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .person-card {
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 24px 16px 20px;
-      width: 260px;
-      text-align: center;
-      transition: box-shadow 0.2s ease, transform 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .person-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
-      transform: translateY(-3px);
-    }
-
-    .person-card img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 3px solid #e2e8f0;
-      display: block;
-      margin: 0 auto 12px;
-    }
-
-    .person-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 5px;
-      line-height: 1.35;
-    }
-
-    .person-card p {
-      font-size: 0.85rem;
-      color: #64748b;
-      line-height: 1.4;
-    }
-
-    .person-card a {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #4338ca;
-      text-decoration: none;
-      background: #eef2ff;
-      padding: 4px 10px;
+      border: 1px solid #c7d2fe;
+      color: #3730a3;
+      padding: 6px 14px;
       border-radius: 999px;
-      transition: background 0.2s;
-    }
-
-    .person-card a:hover {
-      background: #e0e7ff;
+      font-size: 0.88rem;
+      font-weight: 500;
     }
 
     /* Schedule */
@@ -263,93 +313,147 @@
     }
 
     .schedule-table td {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       padding: 18px 20px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
       background: #ffffff;
     }
 
-    /* Sponsor Cards */
-    .sponsor-card {
-      text-align: center;
-      padding: 40px 30px;
-    }
+    .schedule-note { text-align: center; color: #64748b; margin-top: 24px; font-size: 0.95rem; }
 
-    .price {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #4338ca;
-      margin: 20px 0;
-    }
-
-    .sponsor-card ul {
-      text-align: left;
-      margin-top: 25px;
-    }
-
-    .sponsor-card li {
-      margin-bottom: 14px;
-      color: #475569;
-      line-height: 1.7;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* People */
+    .people-grid {
+      display: flex;
+      flex-wrap: wrap;
       gap: 30px;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
+
+    .person-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 16px 20px;
+      width: 260px;
+      text-align: center;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .person-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.09); transform: translateY(-3px); }
+
+    .person-card img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid #e2e8f0;
+      display: block;
+      margin: 0 auto 14px;
+    }
+
+    .person-card h3 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+    .person-card .role { font-size: 0.85rem; font-weight: 600; color: #4338ca; }
+    .person-card .org { font-size: 0.85rem; color: #0f172a; margin-bottom: 0; }
+    .person-card .bio { font-size: 0.9rem; color: #475569; text-align: left; line-height: 1.65; }
+
+    .person-card a {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4338ca;
+      background: #eef2ff;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .person-card a:hover { background: #e0e7ff; }
+
+    .person-card .email { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; font-size: 0.85rem; color: #0f172a; }
+    .person-card .email a { background: none; padding: 0; margin: 0; color: #0f172a; font-weight: 500; word-break: break-all; }
+    .person-card .email a:hover { color: #4338ca; background: none; }
+
+    /* Panel placeholders */
+    .panel-grid { gap: 24px; }
+    .panel-grid .person-card { width: 240px; padding: 28px 22px 24px; }
+    .panel-grid .person-card h3 { font-size: 1.05rem; }
+    .panel-grid .person-card .org { font-size: 0.88rem; margin-bottom: 14px; }
+
+    .avatar-tba {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      background: #eef2ff;
+      border: 3px dashed #c7d2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6366f1;
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    .panel-grid .person-card h3 { color: #64748b; }
+
+    @media (max-width: 768px) {
+      .panel-grid .person-card { width: calc(50% - 15px); padding: 20px 12px; }
+      .avatar-tba { width: 110px; height: 110px; font-size: 1.1rem; }
+    }
+
+    /* Institutions marquee */
+    .institutions { padding: 80px 0; border-top: 1px solid #e2e8f0; overflow: hidden; }
+    .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .inst { width: 300px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .inst-badge { width: 76px; height: 76px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; color: #facc15; }
+    .inst-badge.clrlc { background: #4338ca; }
+    .inst-badge.csiro { background: #0f172a; }
+    .inst span { font-weight: 600; color: #0f172a; font-size: 0.95rem; text-align: center; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+    @media (max-width: 768px) { .inst { width: 200px; } }
 
     /* Footer */
-    footer {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
+    footer { background: #0f172a; color: white; text-align: center; padding: 30px 20px; }
+    footer h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    footer p { max-width: 700px; margin: auto; color: #cbd5e1; }
+    footer .small { font-size: 0.85rem; color: #94a3b8; }
+
+    @media (max-width: 1100px) {
+      .nav-links { gap: 18px; font-size: 0.95rem; }
     }
 
-    footer h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    footer p {
-      max-width: 700px;
-      margin: auto;
-      color: #cbd5e1;
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .activity-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .hero { padding: 100px 0; }
-      .hero h1 { font-size: 1.9rem; line-height: 1.3; }
-      .hero p { font-size: 1rem; }
+      section { padding: 70px 0; }
+      .hero { padding: 70px 0 60px; min-height: auto; }
+      .hero h1 { font-size: 1.9rem; letter-spacing: -0.3px; }
+      .hero p { font-size: 0.98rem; }
+      .hero .subtitle { font-size: 0.95rem; }
+      .hero-meta { gap: 16px; flex-direction: column; margin-top: 40px; }
       .nav-links { display: none; }
+      .nav-cta { padding: 9px 14px; font-size: 0.9rem; }
       .section-header h2 { font-size: 1.5rem; }
-      .about-grid, .card-grid { grid-template-columns: 1fr !important; }
-      .schedule-table { width: 100%; display: block; overflow-x: auto; white-space: nowrap; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-card, .activity { padding: 28px; }
+      .schedule-table { width: 100%; }
       .schedule-table th, .schedule-table td { font-size: 0.85rem; padding: 14px 12px; }
-      .people-grid { gap: 14px; padding: 0 8px; }
-      .person-card { width: calc(50% - 7px); padding: 20px 12px 18px; }
-      .person-card img { width: 120px; height: 120px; }
-      .person-card h3 { font-size: 0.92rem; }
-      .person-card p { font-size: 0.78rem; }
-      .container { width: 94%; }
-      .hero-buttons { flex-direction: column; align-items: center; }
-      .btn { width: 100%; max-width: 320px; text-align: center; }
+      .person-card { width: 100%; }
+      .container { width: 92%; }
+      .hero-buttons { flex-direction: column; }
+      .btn { width: 100%; }
     }
   </style>
 </head>
@@ -357,403 +461,215 @@
 
   <nav>
     <div class="container nav-content">
-      <div class="logo">
-        <img src="neurips-logo.png" alt="NeurIPS Logo" style="height:32px; width:auto; object-fit:contain;">
-      </div>
+      <a href="#home" class="brand"><img src="neurips-logo-new.png" alt="NeurIPS Logo" style="height:58px; width:auto; object-fit:contain;"></a>
       <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">Overview</a>
-        <a href="#speakers">Speakers</a>
-        <a href="#cfp">Call for Papers</a>
-        <a href="#schedule">Agenda</a>
+        <a href="#about">About</a>
+        <a href="#programme">Programme</a>
+        <a href="#panel">Panel</a>
         <a href="#organisers">Organisers</a>
-        <a href="#sponsors">Sponsorship</a>
-        <a href="#contact">Contact</a>
       </div>
+      <a href="#contact" class="nav-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Get in touch
+      </a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero" id="home">
     <div class="container">
-      <h1 style="text-align:center; max-width:1000px; margin:auto;">
-        The Second Workshop on Centering Low-Resource Languages and Cultures in the Age of Large Language Models
-        <span style="display:block; margin-top:28px; font-size:1.1rem; font-weight:600; color:#facc15; letter-spacing:0.5px; text-align:center;">
-          CLRLC–LLMs Workshop @ NeurIPS 2026 · Sydney, Australia
-        </span>
-      </h1>
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">Call for Papers</a>
-        <a href="#sponsors" class="btn btn-secondary">Become a Sponsor</a>
-        <a href="https://clrlcllms.github.io/CLRLCLLMs-workshop.github.io-NeurIPS-2025/" class="btn btn-secondary">Past Event</a>
+      <div class="hero-inner">
+        <div class="badge">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          NeurIPS 2026 Social Event
+        </div>
+        <h1>The Human Context of AI:<br><span class="highlight">Whose Perspective Counts?</span></h1>
+        <p>
+          An interactive evening of conversation, collaboration, and networking on how languages, cultures, and values shape the way we understand and build AI.
+        </p>
+        <div class="hero-buttons">
+          <a href="#about" class="btn btn-primary">
+            Join the Conversation
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#programme" class="btn btn-secondary">View the Programme</a>
+        </div>
+        <span class="subtitle">In-Person Social @ NeurIPS 2026 · Sydney, Australia</span>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="section-header" style="text-align:left; margin-bottom:30px;">
-        <span>About the Workshop</span>
+        <span>About the Social</span>
       </div>
-      <p>
-        Following the successful first CLRLC–LLMs Workshop @ NeurIPS 2025 held in person in Mexico City, which focused on scalable methods for low-resource data creation, model alignment, as well as discussions around language endangerment and linguistic inclusion in LLMs, the second CLRLC–LLMs Workshop aims to bring together diverse researchers from academia and industry, linguists, technologists, AI/ML engineers, open-source contributors, and NLP/AI communities working on low-resource languages to discuss the development, evaluation, and responsible deployment of multilingual and multicultural aware LLMs.
-        This workshop will provide a platform for participants to share the challenges they face in building culturally inclusive and linguistically aware LLMs, the solutions and methodologies they have explored, current limitations in multilingual systems, and the open problems that remain unsolved in developing diverse and inclusive AI for low-resource language communities.
+      <p class="lead" style="max-width:none; margin:0;">
+        This social event will explore the human and cultural context of Artificial Intelligence (AI), focusing on whose languages, values, and perspectives are represented in the AI systems we build and whose are still missing. The event will foster critical and interactive discussion around how AI understands people across different linguistic, cultural, and social contexts, and what can be missed when diverse perspectives are not adequately represented. Through facilitated discussions, interactive challenges, and community networking, participants will exchange experiences, question assumptions, and explore how different perspectives can shape the development of more inclusive and culturally grounded AI. Our goal is to bring together researchers, practitioners, students, and community members from diverse disciplines, regions, and backgrounds to build connections, broaden perspectives, and collectively reflect on whose voices should help shape the future of AI.
       </p>
-      <br>
-      <div class="about-grid" style="margin-top:50px;">
-        <div class="about-card">
-          <h3>Workshop Goals</h3>
-          <ul class="goals">
-            <li>To improve collaboration across global AI and low-resource language research communities.</li>
-            <li>To create networking and mentorship opportunities for early-career researchers, students, and underrepresented communities working in multilingual NLP and low-resource language technologies.</li>
-            <li>To bring together speakers and experts working on multilingual and multicultural aware LLMs to share insights, experiences, research findings, and practical challenges from academia, industry, and community-driven initiatives.</li>
-            <li>To provide a space for independent researchers, students, and emerging researchers to showcase their work, ongoing research, datasets, tools, and ideas related to multilingual and low-resource LLM research.</li>
-            <li>To promote responsible, equitable, and culturally aware multilingual LLMs across diverse global communities.</li>
-          </ul>
-        </div>
-        <div class="about-card">
-          <h3>Topics of Interest</h3>
-          <p style="color:#475569; margin-bottom:25px;">
-            We welcome contributions from NLP, linguistics, computational linguistics, cognitive science communities, as well as from practitioners and technologists working at the intersection of language, culture, and artificial intelligence. Submissions may include technical or interdisciplinary work in areas such as:
-          </p>
-          <ul class="goals">
-            <li>Computational Linguistics</li>
-            <li>NLP for Low-Resource Languages</li>
-            <li>Culturally Aware AI Systems</li>
-            <li>Speech, ASR, and Machine Translation</li>
-            <li>Evaluation and Benchmarking for Low-Resource Languages</li>
-            <li>Human–AI Interaction and Linguistic Inclusivity</li>
-            <li>New Techniques for Improving AI Models and LLMs in Low-Resource Settings</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section id="speakers" style="padding:60px 20px; background:#f8fafc;">
+  <!-- PROGRAMME -->
+  <section id="programme">
     <div class="container">
       <div class="section-header">
-        <span style="color:#000000; font-weight:800; font-size:1.45rem; letter-spacing:0.5px;">Speakers</span>
-      </div>
-      <div class="people-grid">
-        <div class="person-card">
-          <img src="everlyn.jpg" alt="Everlyn Asiko">
-          <h3>Dr. Everlyn Asiko</h3>
-          <p>Lelapa AI</p>
-        </div>
-        <div class="person-card">
-          <img src="sunayana.jpg" alt="Sunayana Sitaram">
-          <h3>Dr. Sunayana Sitaram</h3>
-          <p>Microsoft Research</p>
-        </div>
-        <div class="person-card">
-          <img src="steven.jpg" alt="Steven Fernandes">
-          <h3>Dr. Steven Fernandes</h3>
-          <p>Creighton University</p>
-        </div>
-        <div class="person-card">
-          <img src="lilja.jpg" alt="Lilja Øvrelid">
-          <h3>Professor Lilja Øvrelid</h3>
-          <p>University of Oslo</p>
-        </div>
-        <div class="person-card">
-          <img src="mark.jpg" alt="Mark Johnson">
-          <h3>Dr. Mark Johnson</h3>
-          <p>Macquarie University</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="cfp" style="background:#ffffff; padding:80px 0;">
-    <div class="container">
-      <div class="section-header">
-        <span>Call for Papers</span>
-        <p>The Call for Papers for CLRLC–LLMs Workshop @ NeurIPS 2026 will be announced soon.</p>
+        <span>Programme</span>
+        <h2>Social Programme</h2>
       </div>
       <div class="about-card" style="max-width:800px; margin:auto; text-align:center;">
         <h3>To Be Announced</h3>
-        <p style="color:#475569; margin-top:20px;">
-          Submission guidelines, important dates, and paper submission details will be released soon.
-        </p>
+        <p style="color:#475569; margin-top:12px;">The full programme, date, and room will be announced soon.</p>
       </div>
     </div>
   </section>
 
-  <section id="schedule">
+  <!-- PANEL -->
+  <!-- To add a panelist: replace <div class="avatar-tba">TBA</div> with <img src="photo.jpg" alt="Name">,
+       then fill in the name and affiliation (and optionally add <a href="..." target="_blank">Profile</a>). -->
+  <section id="panel" style="background:#f8fafc;">
     <div class="container">
       <div class="section-header">
-        <span>Schedule</span>
-        <h2 style="font-size:1.6rem;">Draft Workshop Schedule</h2>
+        <span>Panel</span>
+        <h2>Meet the Panelists</h2>
+        <p>Our panelists will be announced soon. Check back for updates.</p>
       </div>
-      <table class="schedule-table">
-        <thead>
-  <tr>
-    <th>Time</th>
-    <th>Duration</th>
-    <th>Session</th>
-    <th>Presented By</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>09:00 – 09:15</td>
-    <td>15 mins</td>
-    <td>Welcome and Opening Remarks</td>
-    <td>Bonaventure F. P. Dossou</td>
-  </tr>
-  <tr>
-    <td>09:15 – 10:00</td>
-    <td>45 mins</td>
-    <td>Keynote Speaker 1</td>
-    <td>Dr. Everlyn Asiko (Lelapa AI)</td>
-  </tr>
-  <tr>
-    <td>10:00 – 10:13</td>
-    <td>13 mins</td>
-    <td>Spotlight Presentation</td>
-    <td>Selected Participant</td>
-  </tr>
-  <tr>
-    <td>10:13 – 10:33</td>
-    <td>20 mins</td>
-    <td>Coffee Break</td>
-    <td>All Participants</td>
-  </tr>
-  <tr>
-    <td>10:33 – 11:18</td>
-    <td>45 mins</td>
-    <td>Keynote Speaker 2</td>
-    <td>Sunayana Sitaram (Microsoft Research)</td>
-  </tr>
-  <tr>
-    <td>11:18 – 11:31</td>
-    <td>13 mins</td>
-    <td>Spotlight Presentations</td>
-    <td>Selected Participant</td>
-  </tr>
-  <tr>
-    <td>11:31 – 12:11</td>
-    <td>40 mins</td>
-    <td>Networking Session + Afternoon Break</td>
-    <td>All Participants</td>
-  </tr>
-  <tr>
-    <td>12:11 – 12:56</td>
-    <td>45 mins</td>
-    <td>Keynote Speaker 3</td>
-    <td>Dr. Steven Fernandes (Creighton University)</td>
-  </tr>
-  <tr>
-    <td>12:56 – 01:09</td>
-    <td>13 mins</td>
-    <td>Spotlight Presentations</td>
-    <td>Selected Participant</td>
-  </tr>
-  <tr>
-    <td>01:09 – 01:49</td>
-    <td>40 mins</td>
-    <td>Open Research Discussion (Breakout Session)</td>
-    <td>Community Discussion</td>
-  </tr>
-  <tr>
-    <td>01:49 – 02:34</td>
-    <td>45 mins</td>
-    <td>Keynote Speaker 4</td>
-    <td>Professor Lilja Øvrelid (University of Oslo)</td>
-  </tr>
-  <tr>
-    <td>02:34 – 03:34</td>
-    <td>60 mins</td>
-    <td>In-Person Poster Session + Break</td>
-    <td>All Participants</td>
-  </tr>
-  <tr>
-    <td>03:34 – 04:09</td>
-    <td>45 mins</td>
-    <td>Keynote Speaker 5</td>
-    <td>Mark Johnson (Macquarie University)</td>
-  </tr>
-  <tr>
-    <td>04:09 – 04:54</td>
-    <td>45 mins</td>
-    <td>Research Wellbeing & Mentorship Conversation</td>
-    <td>Dr. Alexis Palmer and Dr. Stephen Wan</td>
-  </tr>
-  <tr>
-    <td>04:54 – 05:09</td>
-    <td>15 mins</td>
-    <td>Closing Remarks and Sponsorship Acknowledgements</td>
-    <td>Joy Olusanya</td>
-  </tr>
-</tbody>
-      </table>
+      <div class="people-grid panel-grid">
+        <div class="person-card">
+          <div class="avatar-tba">TBA</div>
+          <h3>To Be Announced</h3>
+          <div class="org">Panelist</div>
+        </div>
+        <div class="person-card">
+          <div class="avatar-tba">TBA</div>
+          <h3>To Be Announced</h3>
+          <div class="org">Panelist</div>
+        </div>
+        <div class="person-card">
+          <div class="avatar-tba">TBA</div>
+          <h3>To Be Announced</h3>
+          <div class="org">Panelist</div>
+        </div>
+        <div class="person-card">
+          <div class="avatar-tba">TBA</div>
+          <h3>To Be Announced</h3>
+          <div class="org">Panelist</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD ATTEND -->
+  <section id="attend">
+    <div class="container">
+      <div class="section-header">
+        <span>Who Should Attend</span>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <p style="color:#475569;">
+            The Social is designed for the broader NeurIPS community rather than a specialised technical audience. Its focus on people, communication, language, and culture makes it accessible to researchers and practitioners across fields, as well as students and early-career researchers. We welcome attendees from diverse geographic, disciplinary, linguistic, cultural, and professional backgrounds, with most of the evening dedicated to meaningful conversation, shared experiences, and connections among participants.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Fields We Would Love to See</h3>
+          <div class="chips">
+            <span class="chip">Machine Learning</span>
+            <span class="chip">Natural Language Processing</span>
+            <span class="chip">Speech</span>
+            <span class="chip">Human-Computer Interaction</span>
+            <span class="chip">Responsible AI</span>
+            <span class="chip">Human-Centred AI</span>
+            <span class="chip">Computer Vision</span>
+            <span class="chip">Robotics</span>
+            <span class="chip">Generative AI</span>
+            <span class="chip">Students & Early-Career</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTITUTIONS -->
+  <section class="institutions" id="institutions">
+    <div class="section-header">
+      <span>Represented Institutions</span>
+      <h2>Connecting Communities Across the Globe</h2>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="inst"><div class="inst-badge clrlc">CL</div><span>CLRLC</span></div>
+        <div class="inst"><div class="inst-badge csiro">CS</div><span>CSIRO</span></div>
+        <div class="inst"><div class="inst-badge clrlc">CL</div><span>CLRLC</span></div>
+        <div class="inst"><div class="inst-badge csiro">CS</div><span>CSIRO</span></div>
+        <div class="inst"><div class="inst-badge clrlc">CL</div><span>CLRLC</span></div>
+        <div class="inst"><div class="inst-badge csiro">CS</div><span>CSIRO</span></div>
+        <div class="inst"><div class="inst-badge clrlc">CL</div><span>CLRLC</span></div>
+        <div class="inst"><div class="inst-badge csiro">CS</div><span>CSIRO</span></div>
+        <div class="inst"><div class="inst-badge clrlc">CL</div><span>CLRLC</span></div>
+        <div class="inst"><div class="inst-badge csiro">CS</div><span>CSIRO</span></div>
+        <div class="inst"><div class="inst-badge clrlc">CL</div><span>CLRLC</span></div>
+        <div class="inst"><div class="inst-badge csiro">CS</div><span>CSIRO</span></div>
+      </div>
     </div>
   </section>
 
   <!-- ORGANISERS -->
-  <section id="organisers" style="padding:80px 0; background:#ffffff;">
+  <section id="organisers" style="background:#f8fafc;">
     <div class="container">
       <div class="section-header">
         <span>Organisers</span>
-        <h2>Meet the Organising Committee</h2>
+        <h2>Meet the Organisers</h2>
       </div>
       <div class="people-grid">
         <div class="person-card">
           <img src="joy.jpg" alt="Joy Olusanya">
           <h3>Joy Olusanya</h3>
-          <p>Center for Low-Resource Languages and Cultures</p>
+          <div class="role">Organiser</div>
+          <div class="org">Center for Low-Resource Languages and Cultures (CLRLC)</div>
+          <div class="email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <a href="mailto:joynaomiolusanya@gmail.com">joynaomiolusanya@gmail.com</a>
+          </div>
           <a href="https://naomi-nlp.github.io/my-website/" target="_blank">Profile</a>
-        </div>
-        <div class="person-card">
-          <img src="zijing.jpg" alt="Zijing Shi">
-          <h3>Dr. Zijing Shi</h3>
-          <p>University of Technology Sydney</p>
-          <a href="https://winni18.github.io/" target="_blank">Profile</a>
-        </div>
-        <div class="person-card">
-          <img src="bonaventure.jpg" alt="Bonaventure Dossou">
-          <h3>Bonaventure F. P. Dossou</h3>
-          <p>McGill University & Mila</p>
-          <a href="https://bonaventuredossou.github.io/" target="_blank">Profile</a>
-        </div>
-        <div class="person-card">
-          <img src="alexis.jpg" alt="Alexis Palmer" style="object-position: center center;">
-          <h3>Dr. Alexis Palmer</h3>
-          <p>University of Colorado Boulder</p>
-          <a href="https://lecs-lab.github.io/" target="_blank">Profile</a>
         </div>
         <div class="person-card">
           <img src="necva.jpg" alt="Necva Bölücü">
           <h3>Dr. Necva Bölücü</h3>
-          <p>CSIRO</p>
+          <div class="role">Co-Organiser</div>
+          <div class="org">CSIRO</div>
+          <div class="email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <a href="mailto:Necva.Bolucu@csiro.au">Necva.Bolucu@csiro.au</a>
+          </div>
           <a href="https://people.csiro.au/b/n/necva-bolucu" target="_blank">Profile</a>
-        </div>
-        <div class="person-card">
-  <img src="stephen.jpg" alt="Stephen Wan">
-  <h3>Dr. Stephen Wan</h3>
-  <p>CSIRO</p>
-  <a href="https://people.csiro.au/W/S/Stephen-Wan" target="_blank">Profile</a>
-</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM COMMITTEE -->
-  <section id="program-committee" style="padding:80px 0; background:#f8fafc;">
-    <div class="container">
-      <div class="section-header">
-        <span>Program Committee</span>
-        <h2>Meet the Program Committee</h2>
-      </div>
-      <div class="people-grid">
-        <div class="person-card">
-          <img src="opeyemi.jpg" alt="Opeyemi Osakuade">
-          <h3>Opeyemi Osakuade</h3>
-          <p>University of Edinburgh</p>
-          <a href="https://www.linkedin.com/in/opeyemi-osakuade/" target="_blank">Profile</a>
-        </div>
-        <div class="person-card">
-          <img src="mary.jpg" alt="Mary Salami">
-          <h3>Mary Salami</h3>
-          <p>UC Santa Barbara</p>
-          <a href="https://www.linkedin.com/in/marysalami/" target="_blank">Profile</a>
-        </div>
-        <div class="person-card">
-          <img src="flora.jpg" alt="Flora Oladipupo">
-          <h3>Flora Oladipupo</h3>
-          <p>Tolaram Group</p>
-          <a href="https://linktr.ee/flora_oladipupo" target="_blank">Profile</a>
-        </div>
-        <div class="person-card">
-          <img src="cynthia-pc.jpg" alt="Cynthia Jayne Amol">
-          <h3>Cynthia Jayne Amol</h3>
-          <p>Tonative</p>
-          <a href="https://jayneamol.github.io/portfolio/" target="_blank">Profile</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPONSORSHIP -->
-  <section id="sponsors" style="background:#f8fafc;">
-    <div class="container">
-      <div class="section-header">
-        <span>Sponsorship</span>
-        <h2>Sponsorship Tiers</h2>
-        <p>Support globally inclusive AI and multilingual NLP research communities.</p>
-      </div>
-      <div class="card-grid" style="grid-template-columns:repeat(2, 1fr); gap:30px;">
-        <div class="card sponsor-card">
-          <h3>Platinum</h3>
-          <div class="price" style="white-space:nowrap; font-size:2rem;">$20K–$30K</div>
-          <ul>
-            <li>Sponsor logo on opening & closing slides</li>
-            <li>Verbal acknowledgement by organisers</li>
-            <li>Sponsor talk slot (5–10 min) or panel seat</li>
-            <li>Branded materials in attendee swag bags</li>
-            <li>Access to opt-in attendee resume book</li>
-            <li>Social media features on LinkedIn & X</li>
-          </ul>
-        </div>
-        <div class="card sponsor-card">
-          <h3>Gold</h3>
-          <div class="price">$10K–$20K</div>
-          <ul>
-            <li>Logo on workshop website & shared slide deck</li>
-            <li>Verbal acknowledgement by organisers</li>
-            <li>Branded materials in attendee swag bags</li>
-            <li>Access to opt-in attendee resume book</li>
-            <li>Social media mentions</li>
-          </ul>
-        </div>
-        <div class="card sponsor-card">
-          <h3>Silver</h3>
-          <div class="price">$5K–$10K</div>
-          <ul>
-            <li>Logo on workshop website & shared slide deck</li>
-            <li>Verbal acknowledgement by organisers</li>
-            <li>Branded flyer in attendee swag bags</li>
-            <li>Social media mention</li>
-          </ul>
-        </div>
-        <div class="card sponsor-card">
-          <h3>Bronze</h3>
-          <div class="price">$1.5K–$5K</div>
-          <ul>
-            <li>Logo on workshop website</li>
-            <li>Verbal acknowledgement by organisers</li>
-            <li>Listed acknowledgement in opening slides</li>
-            <li>Social media mention</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" style="background:#ffffff; padding:90px 0; color:#0f172a;">
+  <section id="contact" style="padding:90px 0;">
     <div class="container">
       <div class="section-header">
         <span>Contact</span>
-        <h2>Contact & Organising Institution</h2>
+        <h2>Get in Touch</h2>
       </div>
-      <div class="about-grid" style="margin-top:40px; align-items:start;">
+      <div class="about-grid">
         <div class="about-card">
           <h3>Center for Low-Resource Languages and Cultures (CLRLC)</h3>
-          <p style="color:#475569; margin-bottom:20px;">
-            This workshop is organised and supported by the Center for Low-Resource Languages and Cultures (CLRLC), a global initiative advancing research, technology, and community-building for low-resource languages and culturally inclusive AI systems. CLRLC works across multilingual NLP, linguistic inclusion, AI accessibility, and culturally grounded language technologies through collaborations with researchers, students, AI/ML engineers, open-source communities, and institutions worldwide.
-          </p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqPYWM7HhZ7q-SlIM7clXCrapALdqNrPCjnmWB17LU3IGyHg/viewform" target="_blank" style="display:inline-block; margin-top:25px; background:#4338ca; color:white; padding:14px 24px; border-radius:12px; font-weight:600;">
-            Join CLRLC Slack Community
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqPYWM7HhZ7q-SlIM7clXCrapALdqNrPCjnmWB17LU3IGyHg/viewform" target="_blank" style="display:inline-block; margin-top:5px; background:#4338ca; color:white; padding:14px 24px; border-radius:12px; font-weight:600;">
+            Join CLRLC Community
           </a>
         </div>
-        <div class="about-card" style="background:#ffffff; border:1px solid #cbd5e1;">
-          <h3 style="margin-bottom:30px;">Contact Information</h3>
+        <div class="about-card">
+          <h3>Contact Information</h3>
           <ul class="goals">
-            <li><strong>Workshop Email:</strong> centerlowresourcellms@gmail.com</li>
-            <li><strong>Organisation Email:</strong> info@clrlc.org</li>
-            <li><strong>Website:</strong> <a href="https://www.clrlc.org/" target="_blank">https://www.clrlc.org/ ↗</a></li>
-            <li><strong>LinkedIn:</strong> Center for Low-Resource Languages and Culture</li>
+            <li><strong>Organiser:</strong> <a href="mailto:joynaomiolusanya@gmail.com" style="color:#4338ca;">joynaomiolusanya@gmail.com</a></li>
+            <li><strong>Co-Organiser:</strong> <a href="mailto:Necva.Bolucu@csiro.au" style="color:#4338ca;">Necva.Bolucu@csiro.au</a></li>
+            <li><strong>Organisation Email:</strong> <a href="mailto:info@clrlc.org" style="color:#4338ca;">info@clrlc.org</a></li>
+            <li><strong>Website:</strong> <a href="https://www.clrlc.org/" target="_blank" style="color:#4338ca;">www.clrlc.org ↗</a></li>
           </ul>
         </div>
       </div>
@@ -762,10 +678,7 @@
 
   <footer>
     <div class="container">
-      <h2>Supporting Globally Inclusive AI</h2>
-      <p>
-        We welcome partnerships supporting multilingual NLP research, culturally aware AI systems, and equitable representation for low-resource language communities worldwide.
-      </p>
+      <p class="small">The Human Context of AI: Whose Perspective Counts? · NeurIPS 2026 Social</p>
     </div>
   </footer>
 
