@@ -472,6 +472,26 @@
       .nav-cta { display: none; }
       .nav-links-cta { display: block; color: #4338ca; font-weight: 600; }
     }
+    #organisers .people-grid { align-items: stretch; }
+    #organisers .person-card {
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #organisers .person-card .org,
+    #organisers .person-card .role { min-height: 0; }
+    #organisers .person-card .email {
+      align-items: flex-start;
+      width: 100%;
+      justify-content: center;
+      text-align: left;
+      font-size: 0.82rem;
+      margin-top: 10px;
+    }
+    #organisers .person-card .email svg { flex-shrink: 0; margin-top: 3px; }
+    #organisers .person-card .email a { word-break: break-all; }
+    #organisers .person-card > a:last-child { margin-top: auto; }
   </style>
 </head>
 <body>
