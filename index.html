@@ -504,30 +504,27 @@
       .panel-grid .person-card h3 { font-size: 0.95rem; }
       .panel-grid .person-card .org { font-size: 0.8rem; }
     }
-    #organisers .people-grid, #panel .people-grid { gap: 32px; align-items: stretch; }
+    #organisers .people-grid, #panel .people-grid { max-width: 1200px; gap: 32px; align-items: stretch; }
     #organisers .person-card, #panel .person-card {
-      width: 300px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;
-      padding: 32px 24px 28px; box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+      width: 370px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 34px 26px 30px; box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
       display: flex; flex-direction: column; align-items: center;
     }
     #organisers .person-card img, #panel .person-card img, #panel .avatar-tba {
-      width: 180px; height: 180px; max-width: 100%; border: none;
+      width: 200px; height: 200px; max-width: 100%; border: none;
       box-shadow: 0 0 0 8px #ffffff, 0 8px 24px rgba(15, 23, 42, 0.18);
       margin: 8px auto 26px;
     }
     #panel .avatar-tba { border: 3px dashed #c7d2fe; box-shadow: none; }
-    #organisers .person-card h3, #panel .person-card h3 { color: #0f172a; font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; }
+    #organisers .person-card h3, #panel .person-card h3 { color: #0f172a; font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
     .person-card h3 a.name-link { background: none; padding: 0; margin: 0; border-radius: 0; font-size: inherit; color: #0f172a; font-weight: 700; display: inline; }
     .person-card h3 a.name-link:hover { color: #4338ca; text-decoration: underline; background: none; }
-    #organisers .person-card .role { font-size: 0.85rem; font-weight: 600; color: #4338ca; margin-bottom: 4px; }
-    #organisers .person-card .org, #panel .person-card .org { font-style: italic; color: #334155; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0; }
+    #organisers .person-card .role { font-size: 0.8rem; font-weight: 600; color: #4338ca; margin-bottom: 4px; }
+    #organisers .person-card .org, #panel .person-card .org { font-style: italic; color: #334155; font-size: 0.88rem; line-height: 1.6; margin-bottom: 0; }
     #organisers .person-card .org { margin-bottom: 16px; }
     .person-card a.email-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border-radius: 50%; background: #eef2ff; color: #4338ca; }
     .person-card a.email-icon:hover { background: #4338ca; color: #ffffff; }
     #organisers .person-card > a.email-icon { margin-top: auto; }
-    #panel .people-grid { gap: 24px; }
-    #panel .person-card { width: 250px; }
-    #panel .person-card img, #panel .avatar-tba { width: 160px; height: 160px; }
     @media (max-width: 768px) {
       #organisers .person-card, #panel .person-card { width: 100%; max-width: 340px; padding: 26px 20px 24px; }
       #organisers .person-card img, #panel .person-card img, #panel .avatar-tba { width: 150px; height: 150px; }
