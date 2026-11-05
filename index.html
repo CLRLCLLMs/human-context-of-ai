@@ -536,6 +536,13 @@
       #organisers .person-card, #panel .person-card { width: 100%; max-width: 340px; }
       #organisers .person-card img, #panel .person-card img, #panel .avatar-tba { width: 150px; height: 150px; }
     }
+    .bio-dialog { border: none; border-radius: 12px; padding: 0; max-width: 520px; width: calc(100% - 32px); box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25); }
+    .bio-dialog::backdrop { background: rgba(15, 23, 42, 0.55); }
+    .bio-inner { position: relative; padding: 30px 28px 26px; text-align: left; }
+    #panel .bio-inner h3 { font-size: 1.15rem; color: #0f172a; margin-bottom: 10px; padding-right: 30px; }
+    .bio-inner p { color: #334155; font-size: 0.95rem; line-height: 1.7; }
+    .bio-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 1.7rem; line-height: 1; color: #64748b; cursor: pointer; }
+    .bio-close:hover { color: #0f172a; }
   </style>
 </head>
 <body>
@@ -628,7 +635,14 @@
         </div>
         <div class="person-card">
           <img src="aditya-joshi.jpg" alt="Dr. Aditya Joshi">
-          <h3>Dr. Aditya Joshi</h3>
+          <h3><a class="name-link" href="#" data-bio="bio-aditya">Dr. Aditya Joshi</a></h3>
+          <dialog id="bio-aditya" class="bio-dialog">
+            <div class="bio-inner">
+              <button class="bio-close" aria-label="Close">&times;</button>
+              <h3>Dr. Aditya Joshi</h3>
+              <p>Dr. Aditya Joshi is a Senior Lecturer in the School of Computer Science and Engineering at UNSW Sydney. He heads the natural language processing (NLP) research group that specialises in NLP for language variation, grounded in the human context of linguistic diversity. His NLP research since 2011 has resulted in 3900+ citations and a textbook of NLP.</p>
+            </div>
+          </dialog>
           <div class="org">Senior Lecturer at UNSW Sydney</div>
         </div>
         <div class="person-card">
@@ -774,5 +788,17 @@
       })
     );
   </script>
+<script>
+  document.querySelectorAll('[data-bio]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById(link.dataset.bio).showModal();
+    });
+  });
+  document.querySelectorAll('.bio-dialog').forEach(dialog => {
+    dialog.querySelector('.bio-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  });
+</script>
 </body>
 </html>
