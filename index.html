@@ -543,6 +543,8 @@
     .bio-inner p { color: #334155; font-size: 0.95rem; line-height: 1.7; }
     .bio-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 1.7rem; line-height: 1; color: #64748b; cursor: pointer; }
     .bio-close:hover { color: #0f172a; }
+    .bio-inner { max-height: 80vh; overflow-y: auto; }
+    .bio-inner p + p { margin-top: 12px; }
   </style>
 </head>
 <body>
@@ -639,6 +641,20 @@
             </div>
           </dialog>
           <div class="org">Senior Lecturer at UNSW Sydney</div>
+        </div>
+        <div class="person-card">
+          <img src="sunayana.jpg" alt="Dr. Sunayana Sitaram">
+          <h3><a class="name-link" href="#" data-bio="bio-sunayana">Dr. Sunayana Sitaram</a></h3>
+          <dialog id="bio-sunayana" class="bio-dialog">
+            <div class="bio-inner">
+              <button class="bio-close" aria-label="Close">&times;</button>
+              <h3>Dr. Sunayana Sitaram</h3>
+              <p>Sunayana Sitaram is an Assistant Professor at the Department of Computational and Data Sciences, Indian Institute of Science. Her work focuses on the evaluation of AI systems across languages, cultures, and real-world contexts. Her research spans multilingual and multicultural evaluation, community-based evaluation, AI safety, and the validity of AI-based evaluation methods. At IISc, she leads the Center for AI Evaluation to advance a rigorous, independent science of evaluation for AI systems with a focus on under-represented languages, cultures and contexts.</p>
+              <p>Prior to joining IISc, Sunayana spent 11 years at Microsoft Research India as a Post Doctoral Researcher, Senior Researcher and Principal Researcher. At Microsoft Research, she served as the director of the MSR India Research Fellow program (2022–2024), which exposes bright young researchers to a world-class research environment and prepares them for careers in research, engineering and entrepreneurship. Before joining MSR India as a Post Doc Researcher in 2016, she completed her MS and PhD at the Language Technologies Institute, Carnegie Mellon University in 2015.</p>
+              <p>Sunayana's research has been published in top NLP and ML conferences including ACL, EMNLP, NeurIPS, Interspeech and ICASSP, and she regularly serves on the program committees of these conferences. She has organized special sessions and workshops on under-resourced languages, code-switching, multilingual evaluation and speech for social good. She has also led the creation of several benchmarks and datasets that have been used by research groups all over the world.</p>
+            </div>
+          </dialog>
+          <div class="org">Assistant Professor at Indian Institute of Science</div>
         </div>
         <div class="person-card">
           <div class="avatar-tba">TBA</div>
