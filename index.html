@@ -545,6 +545,20 @@
     .bio-close:hover { color: #0f172a; }
     .bio-inner { max-height: 80vh; overflow-y: auto; }
     .bio-inner p + p { margin-top: 12px; }
+    .event-details { list-style: none; max-width: 900px; margin: 0 auto 36px; padding: 0; }
+    .event-details li { font-size: 1rem; color: #0f172a; padding: 4px 0; }
+    .event-details strong { color: #0f172a; }
+    .agenda { max-width: 900px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; }
+    .agenda-item { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 24px 28px; border-bottom: 1px solid #e2e8f0; }
+    .agenda-item:last-child { border-bottom: none; }
+    .agenda-time { font-weight: 700; color: #4338ca; font-size: 0.95rem; white-space: nowrap; }
+    .agenda-body h3 { font-size: 1.05rem; color: #0f172a; margin-bottom: 4px; }
+    .agenda-who { font-size: 0.88rem; font-style: italic; color: #0f172a; margin-bottom: 10px; }
+    .agenda-body p { font-size: 0.93rem; color: #0f172a; line-height: 1.7; }
+    .agenda-body p + p { margin-top: 10px; }
+    @media (max-width: 768px) {
+      .agenda-item { grid-template-columns: 1fr; gap: 6px; padding: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -609,12 +623,50 @@
   <section id="programme">
     <div class="container">
       <div class="section-header">
-        <span>Program</span>
-        <h2>Social Program</h2>
+        <h2>Event Schedule</h2>
       </div>
-      <div class="about-card" style="max-width:800px; margin:auto; text-align:center;">
-        <h3>To Be Announced</h3>
-        <p style="color:#475569; margin-top:12px;">The full program, date, and room will be announced soon.</p>
+
+      <ul class="event-details">
+        <li><strong>Duration:</strong> 2 hours</li>
+        <li><strong>Date:</strong> Wednesday, December 9</li>
+        <li><strong>Time:</strong> 7:00 pm – 9:00 pm</li>
+        <li><strong>Location:</strong> Room to be announced soon</li>
+      </ul>
+
+      <div class="agenda">
+        <div class="agenda-item">
+          <div class="agenda-time">7:00 – 7:05 pm</div>
+          <div class="agenda-body">
+            <h3>Welcome and Opening Remarks</h3>
+            <div class="agenda-who">Dr. Necva Bölücü</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">7:05 – 7:50 pm</div>
+          <div class="agenda-body">
+            <h3>Panel Discussion: “Whose Perspective Counts in AI?”</h3>
+            <div class="agenda-who">30-minute panel followed by 15 minutes of audience Q&amp;A</div>
+            <p>Artificial intelligence is increasingly shaping how people communicate, access information, learn and participate in society. However, as these technologies become more integrated into everyday life, important questions arise about whose perspectives, experiences, languages and values are represented in the systems being developed, and whose are overlooked.</p>
+            <p>This session will examine the human, ethical and societal dimensions of AI development, with attention to representation, inclusion, responsibility and accountability. It will explore how well current AI systems serve different linguistic and cultural communities, the ethical considerations surrounding the data used to develop them, and the extent to which AI technologies reflect the diversity of the people they are designed to serve.</p>
+            <p>The discussion will also consider the role of human values in AI development, including questions of trust, safety, fairness and governance. Bringing together perspectives from AI ethics, natural language processing, human-AI interaction, multilingual technologies and responsible AI, the session will examine the relationship between technological progress and its broader human implications.</p>
+            <p>The discussion seeks to move beyond how advanced AI systems are becoming to consider whom they serve, whose values and knowledge they reflect, who is accountable for their impact, and who has a meaningful voice in shaping their future.</p>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">7:50 – 8:55 pm</div>
+          <div class="agenda-body">
+            <h3>Community Networking and Round-Table Discussion</h3>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">8:55 – 9:00 pm</div>
+          <div class="agenda-body">
+            <h3>Closing Remarks</h3>
+          </div>
+        </div>
       </div>
     </div>
   </section>
