@@ -568,6 +568,12 @@
     .contact-simple p { font-size: 1.05rem; color: #0f172a; margin-bottom: 12px; }
     .contact-simple a { color: #4338ca; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
     .contact-simple a:hover { color: #3730a3; }
+    #panel .bio-inner p a,
+    #panel .bio-inner p a:hover {
+      display: inline; background: none; padding: 0; margin: 0;
+      border-radius: 0; font-size: inherit; font-weight: inherit; line-height: inherit;
+      color: #4338ca; text-decoration: underline; text-underline-offset: 2px;
+    }
   </style>
 </head>
 <body>
@@ -719,9 +725,16 @@
           <div class="org">Associate Professor at The University of Melbourne</div>
         </div>
         <div class="person-card">
-          <div class="avatar-tba">TBA</div>
-          <h3>To Be Announced</h3>
-          <div class="org">Panelist</div>
+          <img src="UsmanNaseem_Headshot.png" alt="Usman Naseem">
+          <h3><a class="name-link" href="#" data-bio="bio-usman">Usman Naseem</a></h3>
+          <dialog id="bio-usman" class="bio-dialog">
+            <div class="bio-inner">
+              <button class="bio-close" aria-label="Close">&times;</button>
+              <h3>Usman Naseem</h3>
+              <p>Usman Naseem is a Lecturer in the School of Computing at Macquarie University, where he is Head of the <a href="https://socialnlpresearchlab.github.io/" target="_blank" rel="noopener">SocialNLP Lab</a>. He came to academia after about a decade in industry. His research in AI and NLP centres on the safety and alignment of large language models and on NLP for social good, with applications in high-stakes domains such as health and defence. His current work aligns models with human preferences, values and cultures, and uses mechanistic interpretability to understand and control how aligned behaviour emerges inside models. He received the BESC 2026 Rising Star Award, nine Best Paper Awards including at AAAI 2026, and the DAAD AINet Fellowship, and he has been selected as a New Faculty Highlights speaker at AAAI-27. His research is supported by UNICEF’s Safe Online initiative and the Australian Department of Defence, among others. He has served as Program Co-Chair of the Web4Good track at WebConf 2026 and as Senior Area Chair for EMNLP 2025, EACL 2026 and ACL 2026. He also leads the Trustworthy NLP theme of the IEEE Task Force on Trustworthy AI and co-organised SemEval-2026 Task 9. More at <a href="https://usmaann.github.io/" target="_blank" rel="noopener">https://usmaann.github.io/</a></p>
+            </div>
+          </dialog>
+          <div class="org">Lecturer at Macquarie University</div>
         </div>
       </div>
     </div>
